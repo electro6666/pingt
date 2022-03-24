@@ -74,7 +74,7 @@ def scan_xss(url):
         form_details = get_form_details(form)
         content = submit_form(form_details, url, js_script).content.decode()
         if js_script in content:
-            print(
+
             print(f"[+] XSS Detected on {url}")
             print(f"[*] Form details:")
             pprint(form_details)
