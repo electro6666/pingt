@@ -1,4 +1,4 @@
-#pip3 install requests bs4
+import os as xss
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup as bs
@@ -9,14 +9,15 @@ def get_all_forms(url):
     return soup.find_all("form")
 def get_form_details(form):
     """
-    This function extracts all possible useful information about an HTML `form`
+    This function extracts all p
+    ossible useful information about an HTML `form`
     """
     details = {}
-    # get the form action (target url)
+    # get the form action form target url
     action = form.attrs.get("action").lower()
-    # get the form method (POST, GET, etc.)
+    # get the form method .post, get etc...
     method = form.attrs.get("method", "get").lower()
-    # get all the input details such as type and name
+
     inputs = []
     for input_tag in form.find_all("input"):
         input_type = input_tag.attrs.get("type", "text")
@@ -63,6 +64,7 @@ def scan_xss(url):
     Given a `url`, it prints all XSS vulnerable forms and 
     returns True if any is vulnerable, False otherwise
     """
+xss.system("pip3 install requests bs4")
 
     forms = get_all_forms(url)
     print(f"[+] Detected {len(forms)} forms on {url}.")
