@@ -1,4 +1,6 @@
 import os as xss
+xss.system("pip3 install requests bs4")
+
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup as bs
@@ -64,7 +66,7 @@ def scan_xss(url):
     Given a `url`, it prints all XSS vulnerable forms and 
     returns True if any is vulnerable, False otherwise
     """
-xss.system("pip3 install requests bs4")
+
 
     forms = get_all_forms(url)
     print(f"[+] Detected {len(forms)} forms on {url}.")
