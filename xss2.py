@@ -1,6 +1,5 @@
 import os as xss
 xss.system("pip3 install requests bs4")
-
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup as bs
