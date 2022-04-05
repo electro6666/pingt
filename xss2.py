@@ -1,4 +1,8 @@
 import os as xss
+from slowprint.slowprint import *
+slowprint("xss vulnerability detector" 0.5)
+xss.system("pip install slowprint")
+
 xss.system("pip3 install requests bs4")
 import requests
 from pprint import pprint
