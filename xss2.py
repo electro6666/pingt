@@ -1,6 +1,6 @@
 import os as xss
 from slowprint.slowprint import *
-slowprint("xss vulnerability detector" 0.5)
+slowprint("xss vulnerability detector", 0.5)
 xss.system("pip install slowprint")
 
 xss.system("pip3 install requests bs4")
@@ -18,7 +18,7 @@ def get_form_details(form):
     ossible useful information about an HTML `form`
     """
     details = {}
-    # get the form action form target url
+ 
     action = form.attrs.get("action").lower()
     # get the form method .post, get etc...
     method = form.attrs.get("method", "get").lower()
@@ -28,7 +28,7 @@ def get_form_details(form):
         input_type = input_tag.attrs.get("type", "text")
         input_name = input_tag.attrs.get("name")
         inputs.append({"type": input_type, "name": input_name})
-    # put everything to the resulting dictionary
+  
     details["action"] = action
     details["method"] = method
     details["inputs"] = inputs
